@@ -1,32 +1,59 @@
-<h1>Burgers!</h1>
+<div class="row text-center">
+    <h1>Burgers!</h1>
+</div>
 
-<h2>Burgers eaten!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burger-block devour=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+<div class="container border">
+    <div class="row col">
+        <div class="col-6">
+            <h2 class="d-flex justify-content-center">Burgers eaten!</h2>
+            <div class="d-flex justify-content-between">
+                <ol class="col-12">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burger-block devour=false}}
+                    {{/unless}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+        <div class="col-6">
+            <h2 class="d-flex justify-content-center">Burgers list!</h2>
+            <div class="d-flex justify-content-around">
+                <ol class="col-12">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    {{> burger-block devour=true}}
+                    {{/if}}
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Burgers not eaten!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burger-block devour=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+<div class="row mt-5">
+    <div class="row">
+        <h2 class="d-flex justify-content-center">Add a Burger</h2>
+    </div>
+    <form class="create-form d-flex justify-content-center">
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="burger_name">
-  </div>
+        <div class="row col-4">
+            <div class="form-group">
+                <div class="input-group col-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Burger Name</span>
+                    </div>
+                    <input class="form-control mt" type="text" id="ca" aria-label="With textarea" name="burger_name">
 
-  <button type="submit">Add Burger</button>
-</form>
+                </div>
+                <div class="mt-2 d-flex justify-content-center">
+                    <button class="btn btn-primary " type="submit">Add Burger</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,9 +1,14 @@
-<li>
-	{{burger_name}}
-
-{{#unless devour}}
-	<button class="devour-it" data-id="{{id}}" >
-		DEVOUR IT!
-	</button>
-{{/unless}}
-</li>
+<div class="row mt-2">
+    <div class="col-8">
+        <li>
+            {{burger_name}}
+        </li>
+    </div>
+    <div class="col-4">
+        {{#unless devour}}
+        <button type="button" class="btn btn-primary devour-it" data-id="{{id}}">
+            devour it!
+        </button>
+        {{/unless}}
+    </div>
+</div>
